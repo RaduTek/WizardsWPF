@@ -9,9 +9,21 @@ namespace WizardsWPF
     /// </summary>
     internal class SelectedPageChangedEventArgs : EventArgs
     {
+        /// <summary>
+        /// Index of the previous page
+        /// </summary>
         public int PreviousIndex { get; private set; }
+
+        /// <summary>
+        /// Index of the current page
+        /// </summary>
         public int CurrentIndex { get; private set; }
 
+        /// <summary>
+        /// Create a new event argument object
+        /// </summary>
+        /// <param name="previousIndex">Index of the previous page</param>
+        /// <param name="currentIndex">Index of the current page</param>
         public SelectedPageChangedEventArgs(int previousIndex, int currentIndex)
         {
             PreviousIndex = previousIndex;
@@ -221,6 +233,9 @@ namespace WizardsWPF
 
         #region "Public events"
 
+        /// <summary>
+        /// Occurs when the selected page changes
+        /// </summary>
         public event EventHandler<SelectedPageChangedEventArgs> SelectedPageChanged;
 
         #endregion
